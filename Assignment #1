@@ -1,0 +1,54 @@
+package com.example.lifecycleexample;
+
+import android.os.Bundle;
+import android.util.Log;
+import androidx.appcompat.app.AppCompatActivity;
+
+public class MainActivity extends AppCompatActivity {
+
+    private static final String TAG = "LifecycleExample";
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        
+        Log.d(TAG, "onCreate() - Activity is being created");
+        // Initialize your activity here
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.d(TAG, "onStart() - Activity is becoming visible");
+        // Prepare resources needed when visible
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.d(TAG, "onResume() - Activity is now interactive");
+        // Resume animations, updates, etc.
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.d(TAG, "onPause() - Activity is partially visible");
+        // Pause ongoing operations
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.d(TAG, "onStop() - Activity is no longer visible");
+        // Release resources that aren't needed while not visible
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.d(TAG, "onDestroy() - Activity is being destroyed");
+        // Clean up all resources
+    }
+}
