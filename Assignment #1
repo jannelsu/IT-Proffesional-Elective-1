@@ -4,51 +4,48 @@ import android.os.Bundle;
 import android.util.Log;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class MainActivity extends AppCompatActivity {
-
-    private static final String TAG = "LifecycleExample";
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+class MainActivity : AppCompatActivity () {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        Log.d(tag: "--demo", msg: "calling onCreate")
+        setContentView(R.layout.activity_main)
         
-        Log.d(TAG, "onCreate() - Activity is being created");
-        // Initialize your activity here
     }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-        Log.d(TAG, "onStart() - Activity is becoming visible");
-        // Prepare resources needed when visible
+    override fun onStart() {
+        //call superclass constructor
+        super.onStart()
+        Log.d(tag: "--demo", msg: "calling onStart")
     }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-        Log.d(TAG, "onResume() - Activity is now interactive");
-        // Resume animations, updates, etc.
+    override fun onRestart() {
+        //call superclass constructor
+        super.onRestart()
+        Log.d(tag: "--demo", msg: "calling onRestart")
     }
 
-    @Override
-    protected void onPause() {
-        super.onPause();
-        Log.d(TAG, "onPause() - Activity is partially visible");
-        // Pause ongoing operations
+    override fun onResume() {
+        //call superclass constructor
+        super.onResume()
+        Log.d(tag: "--demo", msg: "calling onResume")
     }
 
-    @Override
-    protected void onStop() {
-        super.onStop();
-        Log.d(TAG, "onStop() - Activity is no longer visible");
-        // Release resources that aren't needed while not visible
+    override fun onPause() {
+        //call superclass constructor
+        super.onPause()
+        Log.d(tag: "--demo", msg: "calling onPause")
     }
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        Log.d(TAG, "onDestroy() - Activity is being destroyed");
-        // Clean up all resources
+    override fun onStop() {
+        //call superclass constructor
+        super.onStop()
+        Log.d(tag: "--demo", msg: "calling onStop")
     }
+
+    override fun onDestroy() {
+        //call superclass constructor
+        super.onDestroy()
+        Log.d(tag: "--demo", msg: "calling onDestroy")
+    
 }
+
